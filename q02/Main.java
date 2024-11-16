@@ -9,8 +9,8 @@ public class Main {
         PagamentoCartao nubank = new PagamentoCartao();
         PagamentoPix caixa = new PagamentoPix();
 
-        caixa.processarPagamento(playstation);
-        nubank.processarPagamento(iphone);
-        caixa.processarPagamento(camisaInsider);
+        caixa.processarPagamento(playstation, 630);
+        nubank.processarPagamento(iphone, 3150);
+        caixa.processarPagamento(camisaInsider, 160);
     }
 }

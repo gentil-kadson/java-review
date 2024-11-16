@@ -2,8 +2,12 @@ package q02;
 
 public class PagamentoCartao implements Pagamento {
     @Override
-    public boolean processarPagamento(Produto produto) {
-        System.out.println("Pagamento de $" + produto.calcularDesconto() + " por cartao efetivado.");
-        return true;
+    public boolean processarPagamento(Produto produto, float valor) {
+        if (produto.calcularDesconto() == valor) {
+            System.out.println("Pagamento de R$" + valor + " por cartao efetivado.");
+            return true;
+        }
+        System.out.println("Pagamento nao efetuado, valor incorreto");
+        return false;
     }
 }
