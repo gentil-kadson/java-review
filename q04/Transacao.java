@@ -1,12 +1,7 @@
 package q04;
 
-public class Transacao {
+public interface Transacao {
+    public void sacar(double valor) throws ValorInvalidoException, SaldoInsuficienteException;
 
-    public void sacar(Conta conta, double valor) {
-
-    }
-
-    public void depositar(Conta conta, double valor) {
-
-    }
+    public void depositar(double valor) throws ValorInvalidoException;
 }
