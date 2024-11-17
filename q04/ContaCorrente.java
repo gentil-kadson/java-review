@@ -16,4 +16,16 @@ public class ContaCorrente extends Conta {
         this.taxaParaSaque = taxaParaSaque;
     }
 
+    @Override
+    public void sacar(double valor) throws ValorInvalidoException, SaldoInsuficienteException {
+        if (valor < 0) {
+            throw new ValorInvalidoException("O valor a ser sacado nao pode ser negativo.");
+        }
+        if (valor + this.taxaParaSaque > this.saldo) {
+            throw new SaldoInsuficienteException(
+                    "O valor a ser sacado somado da taxa para saque e maior do que o seu saldo.");
+        }
+        this.saldo = this.saldo - (this.taxaParaSaque + valor);
+    }
+
 }
