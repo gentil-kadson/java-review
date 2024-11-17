@@ -15,6 +15,7 @@ public class Main {
 
         try {
             nubank.sacar(5000);
+            System.out.println("Novo saldo Nubank: R$" + nubank.getSaldo());
             nubank.depositar(510);
             System.out.println("Novo saldo Nubank: R$" + nubank.getSaldo());
         } catch (ValorInvalidoException e) {
